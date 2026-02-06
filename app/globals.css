@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* 🎨 Design Tokens */
+@theme {
+  --color-primary: #2f6f6a;    /* calm teal-green */
+  --color-secondary: #f2c9b1;  /* warm peach */
+  --color-accent: #5b6cff;     /* soft professional blue/purple */
+  --color-bg: #f9fafb;         /* light background */
+  --color-text: #1f2937;       /* slate-800 */
+}
+
+/* 🌍 Base styles */
+@layer base {
+  body {
+    @apply bg-[var(--color-bg)] text-[var(--color-text)] antialiased;
+  }
+}
+
+/* 🧩 Reusable components */
+@layer components {
+  .btn-primary {
+    @apply bg-[var(--color-primary)] text-white px-8 py-4 rounded-full shadow-lg 
+           hover:shadow-xl hover:scale-105 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-[var(--color-accent)] text-white px-6 py-3 rounded-full shadow-md 
+           hover:shadow-lg transition;
+  }
+
+  .section {
+    @apply max-w-7xl mx-auto px-6 py-24;
+  }
+
+  .section-soft {
+    @apply max-w-7xl mx-auto px-6 py-24 bg-[#f6f3ee] rounded-3xl;
+  }
+
+  .heading-main {
+    @apply text-4xl md:text-5xl font-bold text-slate-800;
+  }
+
+  .heading-accent {
+    @apply text-[var(--color-primary)];
+  }
+
+  .text-muted {
+    @apply text-slate-600;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl p-8 shadow-md hover:shadow-xl 
+           transition-all duration-300 hover:-translate-y-1;
+  }
+}
